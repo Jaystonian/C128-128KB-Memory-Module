@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -403,17 +403,6 @@ Connection ~ 5350 4950
 Wire Wire Line
 	5350 4950 5500 4950
 Connection ~ 8050 6050
-$Comp
-L 74xGxx:74AHCT1G00 U4
-U 1 1 5DE1F61F
-P 5800 5000
-F 0 "U4" H 5950 5100 50  0000 C CNN
-F 1 "74AHCT1G00" H 6100 4900 50  0000 C CNN
-F 2 "Package_SO:TSOP-5_1.65x3.05mm_P0.95mm" H 5800 5000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 5800 5000 50  0001 C CNN
-	1    5800 5000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6050 5000 6350 5000
 Wire Wire Line
@@ -465,16 +454,8 @@ Wire Wire Line
 Wire Wire Line
 	5750 5950 5750 6250
 Wire Wire Line
-	5750 6250 6450 6250
+	5750 6250 6200 6250
 Connection ~ 6450 6250
-Wire Wire Line
-	6350 5000 6350 5400
-Wire Wire Line
-	6350 5400 5750 5400
-Wire Wire Line
-	5750 5400 5750 5950
-Connection ~ 6350 5000
-Connection ~ 5750 5950
 Wire Wire Line
 	5200 5000 5200 5750
 Wire Wire Line
@@ -888,10 +869,10 @@ MA6
 Text Label 5300 3150 0    50   ~ 0
 MA7
 $Comp
-L Power2:+5V #PWR?
+L Power2:+5V #PWR0112
 U 1 1 5DF97ECB
 P 3600 2800
-F 0 "#PWR?" H 3600 2650 50  0001 C CNN
+F 0 "#PWR0112" H 3600 2650 50  0001 C CNN
 F 1 "+5V" H 3615 2973 50  0000 C CNN
 F 2 "" H 3600 2800 50  0001 C CNN
 F 3 "" H 3600 2800 50  0001 C CNN
@@ -901,6 +882,66 @@ $EndComp
 Wire Wire Line
 	800  3700 1100 3700
 Connection ~ 2550 2700
+$Comp
+L Power2:GND #PWR0113
+U 1 1 5DFE4264
+P 1450 2050
+F 0 "#PWR0113" H 1450 1800 50  0001 C CNN
+F 1 "GND" H 1455 1877 50  0000 C CNN
+F 2 "" H 1450 2050 50  0001 C CNN
+F 3 "" H 1450 2050 50  0001 C CNN
+	1    1450 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AHCT2G00 U4
+U 1 1 602B41B4
+P 5800 5000
+F 0 "U4" H 6150 5100 50  0000 C CNN
+F 1 "74AHCT2G00DC,125" H 5775 5176 50  0000 C CNN
+F 2 "Package_SO:VSSOP-8_2.4x2.1mm_P0.5mm" H 5800 5000 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G00.pdf" H 5800 5000 50  0001 C CNN
+	1    5800 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AHCT2G00 U4
+U 2 1 602B4C74
+P 5950 6700
+F 0 "U4" H 5925 6967 50  0000 C CNN
+F 1 "74AHCT2G00DC,125" H 5925 6876 50  0000 C CNN
+F 2 "Package_SO:VSSOP-8_2.4x2.1mm_P0.5mm" H 5950 6700 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT2G00.pdf" H 5950 6700 50  0001 C CNN
+	2    5950 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 5000 6350 5400
+Wire Wire Line
+	6350 5400 5650 5400
+Wire Wire Line
+	5650 5400 5650 6650
+Connection ~ 6350 5000
+Connection ~ 5650 6650
+Wire Wire Line
+	5650 6650 5650 6750
+Wire Wire Line
+	6200 6700 6200 6250
+Connection ~ 6200 6250
+Wire Wire Line
+	6200 6250 6450 6250
+NoConn ~ 3000 3300
+NoConn ~ 3000 3400
+NoConn ~ 3000 3500
+NoConn ~ 3000 3600
+NoConn ~ 3000 3700
+NoConn ~ 3000 4250
+NoConn ~ 1100 4150
+NoConn ~ 1100 4450
+NoConn ~ 1700 2800
+NoConn ~ 1100 3000
+NoConn ~ 1100 3100
+NoConn ~ 1100 3200
 Wire Bus Line
 	2550 2700 2550 3100
 Wire Bus Line
@@ -919,15 +960,4 @@ Wire Bus Line
 	6950 1600 6950 3050
 Wire Bus Line
 	9050 1650 9050 3850
-$Comp
-L Power2:GND #PWR?
-U 1 1 5DFE4264
-P 1450 2050
-F 0 "#PWR?" H 1450 1800 50  0001 C CNN
-F 1 "GND" H 1455 1877 50  0000 C CNN
-F 2 "" H 1450 2050 50  0001 C CNN
-F 3 "" H 1450 2050 50  0001 C CNN
-	1    1450 2050
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
